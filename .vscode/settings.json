@@ -1,0 +1,15 @@
+{
+  "editor.formatOnSave": false,
+  "prettier.enable": false,
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "json",
+    "jsonc",
+    "json5",
+    "markdown"
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
