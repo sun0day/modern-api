@@ -34,6 +34,42 @@ import { sleep, timeout } from 'wodash.timer'
 })()
 ```
 
+### pasue and resume `setTimeout`
+```typescript
+import { pauseTimeout } from 'wodash.timer'
+
+(async () => {
+  const timer = pauseTimeout(() => console.log('done'), 1000) // timer.isActive = true
+
+  await sleep(500)
+  timer.pause() // timer.isActive = false
+
+  await sleep(500) // log nothing
+
+  timer.resume() // timer.isActive = true
+
+  await sleep(500) // log 'done'
+})()
+```
+
+### stop `setTimeout` whenever you don't want to continue
+```typescript
+import { pauseTimeout } from 'wodash.timer'
+
+(async () => {
+  const timer = pauseTimeout(() => console.log('done'), 1000) // timer.isActive = true
+
+  await sleep(500)
+  timer.stop() // timer.isActive = false
+
+  await sleep(500) // log nothing
+
+  timer.resume() // timer.isActive = false
+
+  await sleep(500) // log nothing
+})()
+```
+
 ## Example
 
 ## API
