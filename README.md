@@ -13,7 +13,7 @@
 <img src="https://img.shields.io/github/search/sun0day/wodash/goto?color=%23812461">
 <br>
 <br>
-Easy, tiny, useful web APIs lib based on <a href="https://developer.mozilla.org/en-US/docs/Web/API">Web API</a>.
+Easy, tiny, modern web APIs lib based on <a href="https://developer.mozilla.org/en-US/docs/Web/API">Web API</a>.
 </p>
 
 
@@ -21,4 +21,4 @@ Easy, tiny, useful web APIs lib based on <a href="https://developer.mozilla.org/
 
 > **[Timer](/timer)**: Timer APIs based on `Promise`, `setTimeout`, `setInterval`
 
-`sleep` `timeout`
+`sleep` `timeout` `pauseTimeout`
