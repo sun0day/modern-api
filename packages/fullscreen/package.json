@@ -1,0 +1,25 @@
+{
+  "name": "wodash.fullscreen",
+  "version": "0.1.0",
+  "description": "Fullscreen APIs",
+  "author": "sun0day",
+  "license": "ISC",
+  "keywords": [
+    "wodash",
+    "web api",
+    "utils",
+    "fullscreen"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup --config ../../tsup.config.ts"
+  }
+}

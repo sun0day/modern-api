@@ -19,6 +19,10 @@ Easy, tiny, modern web APIs lib based on <a href="https://developer.mozilla.org/
 
 ## APIs
 
-> **[Timer](/packages/timer)**: Timer APIs based on `Promise`, `setTimeout`, `setInterval`
+> **[Timer](/packages/timer)**: Timer APIs based on `Promise`, `setTimeout`, `setInterval`.
 
 `sleep` `timeout` `pauseTimeout` `pauseInterval`
+
+> **[Fullscreen](/packages/fullscreen)**: More compatibility fullscreen APIs based on [Web Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API).
+
+`fullscreenEnabled` `fullscreenElement` `requestFullscreen` `exitFullscreen` `onFullscreen`
