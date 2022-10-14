@@ -1,12 +1,12 @@
 /**
  * sleep for n ms
  *
- * @param {number} time - sleep time, ms
+ * @param {number} delay - sleep delay, ms
  * @returns {Promise<void>}
  */
-export const sleep = (time: number) => {
+export const sleep = (delay: number) => {
   return new Promise((resolve) => {
-    setTimeout(resolve, time)
+    setTimeout(resolve, delay)
   })
 }
 
@@ -15,13 +15,13 @@ export const sleep = (time: number) => {
  *
  * @template {T} = Promise return value type
  * @param {PromiseLike<T>} value - Promise instance
- * @param {number} time - timeout limit
- * @param {Error} error - timeout error, default new Error(`timeout over ${time}ms`)
+ * @param {number} delay - timeout limit
+ * @param {Error} error - timeout error, default new Error(`timeout over ${delay}ms`)
  * @returns {Promise<T>}
  */
-export const timeout = <T>(value: PromiseLike<T>, time: number, error?: Error) => {
+export const timeout = <T>(value: PromiseLike<T>, delay: number, error?: Error) => {
   return Promise.race([value, new Promise((resolve, reject) => {
-    setTimeout(() => reject(error || new Error(`timeout over ${time}ms`)), time)
+    setTimeout(() => reject(error || new Error(`timeout over ${delay}ms`)), delay)
   })])
 }
 
@@ -29,15 +29,15 @@ export const timeout = <T>(value: PromiseLike<T>, time: number, error?: Error) =
  * pausable `setTimeout`
  *
  * @param {() => any} callback - `setTimeout` callback
- * @param {number} time - `setTimeout` time, ms
+ * @param {number} delay - `setTimeout` delay, ms
  * @returns {{ isActive: boolean, pause: () => void, resume: () => void, stop: () => void }}
- *  isActive - whether `setTimeout` is timing
- *  pause - `setTimeout` stop timing temporarily
- *  resume - `setTimeout` continue timing
- *  stop - `setTimeout` stop timing permanently
+ *  isActive - whether `setTimeout` is timing \
+ *  pause - `setTimeout` stop timing temporarily \
+ *  resume - `setTimeout` continue timing \
+ *  stop - `setTimeout` stop timing permanently \
  */
-export const pauseTimeout = (callback: () => any, time: number) => {
-  let timeId = null; let isStop = false; let now = +new Date(); let remainTime = time
+export const pauseTimeout = (callback: () => any, delay: number) => {
+  let timeId = null; let isStop = false; let now = +new Date(); let remainTime = delay
   const getRemainTime = () => now + remainTime - +new Date()
   const timer = {
     isActive: true,
@@ -66,24 +66,30 @@ export const pauseTimeout = (callback: () => any, time: number) => {
   timeId = setTimeout(() => {
     timer.isActive = false
     callback()
-  }, time)
+  }, delay)
 
   return timer
 }
 
 /**
- * pausable `setInterval`
+ * pausable and safer `setInterval` \
+ * - more flexible \
+ * - make sure callback invoke execute in order \
+ * - make sure no callback invoke missed \
+ * - make sure callback invoke frequency as stable as possible
  *
  * @param {() => any} callback - `setInterval` callback
- * @param {number} time - `setInterval` time, ms
+ * @param {number} delay - `setInterval` delay, ms
  * @returns {{ isActive: boolean, pause: () => void, resume: () => void, stop: () => void }}
- *  isActive - whether `setInterval` is polling
- *  pause - `setInterval` stop polling temporarily
- *  resume - `setInterval` continue polling
- *  stop - `setInterval` stop polling permanently
+ *  isActive - whether `setInterval` is polling \
+ *  pause - `setInterval` stop polling temporarily \
+ *  resume - `setInterval` continue polling \
+ *  stop - `setInterval` stop polling permanently \
  */
-export const pauseInterval = (callback: () => any, time: number) => {
-  let timeId = null; let isStop = false
+export const pauseInterval = (callback: () => any, delay: number) => {
+  let timeId = null
+  let isStop = false
+
   const timer = {
     isActive: true,
     pause: () => {
@@ -93,7 +99,7 @@ export const pauseInterval = (callback: () => any, time: number) => {
     resume: () => {
       if (!isStop) {
         timer.isActive = true
-        timeId = setInterval(callback, time)
+        safeInterval()
       }
     },
     stop: () => {
@@ -103,7 +109,14 @@ export const pauseInterval = (callback: () => any, time: number) => {
     },
   }
 
-  timeId = setInterval(callback, time)
+  function safeInterval() {
+    timeId = setTimeout(() => {
+      callback()
+      timer.isActive && safeInterval()
+    }, delay)
+  }
+
+  safeInterval()
 
   return timer
 }
