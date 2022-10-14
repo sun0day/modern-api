@@ -70,3 +70,40 @@ export const pauseTimeout = (callback: () => any, time: number) => {
 
   return timer
 }
+
+/**
+ * pausable `setInterval`
+ *
+ * @param {() => any} callback - `setInterval` callback
+ * @param {number} time - `setInterval` time, ms
+ * @returns {{ isActive: boolean, pause: () => void, resume: () => void, stop: () => void }}
+ *  isActive - whether `setInterval` is polling
+ *  pause - `setInterval` stop polling temporarily
+ *  resume - `setInterval` continue polling
+ *  stop - `setInterval` stop polling permanently
+ */
+export const pauseInterval = (callback: () => any, time: number) => {
+  let timeId = null; let isStop = false
+  const timer = {
+    isActive: true,
+    pause: () => {
+      timer.isActive = false
+      clearTimeout(timeId)
+    },
+    resume: () => {
+      if (!isStop) {
+        timer.isActive = true
+        timeId = setInterval(callback, time)
+      }
+    },
+    stop: () => {
+      timer.isActive = false
+      isStop = true
+      clearTimeout(timeId)
+    },
+  }
+
+  timeId = setInterval(callback, time)
+
+  return timer
+}

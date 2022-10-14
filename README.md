@@ -21,4 +21,4 @@ Easy, tiny, modern web APIs lib based on <a href="https://developer.mozilla.org/
 
 > **[Timer](/timer)**: Timer APIs based on `Promise`, `setTimeout`, `setInterval`
 
-`sleep` `timeout` `pauseTimeout`
+`sleep` `timeout` `pauseTimeout` `pauseInterval`

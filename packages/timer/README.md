@@ -42,11 +42,11 @@ import { pauseTimeout } from 'wodash.timer'
   const timer = pauseTimeout(() => console.log('done'), 1000) // timer.isActive = true
 
   await sleep(500)
-  timer.pause() // timer.isActive = false
+  timer.pause() // pause timing, timer.isActive = false
 
   await sleep(500) // log nothing
 
-  timer.resume() // timer.isActive = true
+  timer.resume() // resume timing, timer.isActive = true
 
   await sleep(500) // log 'done'
 })()
@@ -60,13 +60,51 @@ import { pauseTimeout } from 'wodash.timer'
   const timer = pauseTimeout(() => console.log('done'), 1000) // timer.isActive = true
 
   await sleep(500)
-  timer.stop() // timer.isActive = false
+  timer.stop() // stop timing, timer.isActive = false
 
   await sleep(500) // log nothing
 
-  timer.resume() // timer.isActive = false
+  timer.resume() // resume not work after stopping, timer.isActive = false
 
   await sleep(500) // log nothing
+})()
+```
+
+### pasue and resume `setInterval`
+```typescript
+import { pauseInterval } from 'wodash.timer'
+
+(async () => {
+  const timer = pauseInterval(() => console.log('tick'), 1000) // timer.isActive = true
+
+  await sleep(500)
+  timer.pause() // pause polling, timer.isActive = false
+
+  await sleep(500) // log nothing
+
+  timer.resume() // resume polling, timer.isActive = true
+
+  await sleep(1000) // log 'tick', timer.isActive = true
+  await sleep(1000) // log 'tick', timer.isActive = true
+})()
+```
+
+### stop `setInterval` whenever you don't want to continue
+```typescript
+import { pauseInterval } from 'wodash.timer'
+
+(async () => {
+  const timer = pauseInterval(() => console.log('tick'), 1000) // timer.isActive = true
+
+  await sleep(500)
+  timer.stop() // stop polling, timer.isActive = false
+
+  await sleep(500) //  log nothing
+
+  timer.resume() // resume not work after stopping, timer.isActive = false
+
+  await sleep(1000) // log nothing
+  await sleep(1000) // log nothing
 })()
 ```
 
