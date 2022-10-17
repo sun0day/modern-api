@@ -34,3 +34,9 @@ Easy, tiny, modern web APIs lib based on <a href="https://developer.mozilla.org/
 > **[Styled-log](/packages/styled-log)**: Log text in custom css style based on [Web Console API](https://developer.mozilla.org/en-US/docs/Web/API/Console_API).
 
 `log` `warn` `error` `debug` `styled`
+
+<br>
+
+> **[Battery](/packages/battery)**: Get and watch battery status via [Web Battery API](https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API).
+
+`batterySupported` `getBattery`

@@ -1,0 +1,25 @@
+{
+  "name": "wodash.battery",
+  "version": "0.1.0",
+  "description": "get battery info",
+  "author": "sun0day",
+  "license": "ISC",
+  "keywords": [
+    "wodash",
+    "web api",
+    "utils",
+    "battery"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup --config ../../tsup.config.ts"
+  }
+}
