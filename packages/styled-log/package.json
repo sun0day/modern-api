@@ -1,0 +1,26 @@
+{
+  "name": "wodash.styledlog",
+  "version": "0.1.0",
+  "description": "log content in custom css style based on",
+  "author": "sun0day",
+  "license": "ISC",
+  "keywords": [
+    "wodash",
+    "web api",
+    "utils",
+    "console.log",
+    "css style"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup --config ../../tsup.config.ts"
+  }
+}

@@ -28,3 +28,9 @@ Easy, tiny, modern web APIs lib based on <a href="https://developer.mozilla.org/
 > **[Fullscreen](/packages/fullscreen)**: More compatibility fullscreen APIs based on [Web Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API).
 
 `fullscreenEnabled` `fullscreenElement` `requestFullscreen` `exitFullscreen` `onFullscreen`
+
+<br>
+
+> **[Styled-log](/packages/styled-log)**: Log text in custom css style based on[Web Console API](https://developer.mozilla.org/en-US/docs/Web/API/Console_API).
+
+`log` `warn` `error` `debug` `styled`
