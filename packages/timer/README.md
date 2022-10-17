@@ -108,7 +108,62 @@ import { pauseInterval } from 'wodash.timer'
 })()
 ```
 
-## Example
-
 ## API
 
+```typescript
+/**
+ * sleep for n ms
+ *
+ * @param {number} delay - sleep delay, ms
+ * @returns {Promise<void>}
+ */
+declare const sleep: (delay: number) => Promise<unknown>;
+/**
+ * reject if Promise timeout, otherwise return Promise result
+ *
+ * @template {T} = Promise return value type
+ * @param {PromiseLike<T>} value - Promise instance
+ * @param {number} delay - timeout limit
+ * @param {Error} error - timeout error, default new Error(`timeout over ${delay}ms`)
+ * @returns {Promise<T>}
+ */
+declare const timeout: <T>(value: PromiseLike<T>, delay: number, error?: Error) => Promise<unknown>;
+/**
+ * pausable `setTimeout`
+ *
+ * @param {() => any} callback - `setTimeout` callback
+ * @param {number} delay - `setTimeout` delay, ms
+ * @returns {{ isActive: boolean, pause: () => void, resume: () => void, stop: () => void }}
+ *  isActive - whether `setTimeout` is timing \
+ *  pause - `setTimeout` stop timing temporarily \
+ *  resume - `setTimeout` continue timing \
+ *  stop - `setTimeout` stop timing permanently \
+ */
+declare const pauseTimeout: (callback: () => any, delay: number) => {
+    isActive: boolean;
+    pause: () => void;
+    resume: () => void;
+    stop: () => void;
+};
+/**
+ * pausable and safer `setInterval` \
+ * - more flexible \
+ * - make sure callback invoke execute in order \
+ * - make sure no callback invoke missed \
+ * - make sure callback invoke frequency as stable as possible
+ *
+ * @param {() => any} callback - `setInterval` callback
+ * @param {number} delay - `setInterval` delay, ms
+ * @returns {{ isActive: boolean, pause: () => void, resume: () => void, stop: () => void }}
+ *  isActive - whether `setInterval` is polling \
+ *  pause - `setInterval` stop polling temporarily \
+ *  resume - `setInterval` continue polling \
+ *  stop - `setInterval` stop polling permanently \
+ */
+declare const pauseInterval: (callback: () => any, delay: number) => {
+    isActive: boolean;
+    pause: () => void;
+    resume: () => void;
+    stop: () => void;
+};
+```

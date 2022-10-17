@@ -42,6 +42,46 @@ onFullscreen({
 })
 ```
 
-
 ## API
 
+```typescript
+/**
+ * whether fullscreen APIs is enabled
+ *
+ * @returns {boolean}
+ */
+declare const fullscreenEnabled: () => boolean;
+/**
+ * get current fullscreen element
+ *
+ * @returns {Element | null}
+ */
+declare const fullscreenElement: () => Element | null;
+/**
+ * trigger fullscreen
+ *
+ * @param {Element} el - el to set fullscreen
+ * @returns {Promise<void>}
+ */
+declare const requestFullscreen: (el: Element) => Promise<unknown>;
+/**
+ * exist fullscreen
+ *
+ * @returns {Promise<void>}
+ */
+declare const exitFullscreen: () => Promise<unknown>;
+/**
+ * listen fullscreen 'change' and 'error' event
+ *
+ * @param {{onScreen: (e: Event) => void, onExit: (e: Event) => void, onError: (e: Event) => void}} callbacks - callback map
+ *  onScreen - trigger when enter fullscreen mode \
+ *  onExit - trigger when quit fullscreen mode
+ *  onError - trigger when fullscreen action fails
+ * @returns {void}
+ */
+declare const onFullscreen: ({ onScreen, onExit, onError, }: {
+    onScreen?: (e: Event) => void;
+    onExit?: (e: Event) => void;
+    onError?: (e: any) => void;
+}) => void;
+```
