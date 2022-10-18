@@ -1,3 +1,12 @@
+## [0.1.1](https://github.com/sun0day/wodash/compare/v0.0.0...v0.1.1) (2022-10-18)
+
+
+### Bug Fixes
+
+* add main entrypoint ([0285552](https://github.com/sun0day/wodash/commit/02855526fcac935b6a4de8f5b038749cfd7e93cc))
+
+
+
 # 0.1.0 (2022-10-18)
 
 
