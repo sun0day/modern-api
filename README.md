@@ -1,19 +1,11 @@
 <p align="center">
 
-<img width="447" alt="image" src="https://user-images.githubusercontent.com/102238922/196330345-738aaed2-d81a-493c-9d6a-68685a62f393.png">
+<img width="382" alt="image" src="https://user-images.githubusercontent.com/102238922/196332498-7fad9978-de4f-47b1-8a2b-4fdfc31dbb34.png">
 
 
 <br>
 <br>
-
-<img src="https://img.shields.io/npm/v/modern-api">
-<img src="https://img.shields.io/npm/dw/modern-api" >
-<img src="https://img.shields.io/bundlephobia/minzip/modern-api?label=minzip">
-<img src="https://img.shields.io/github/commit-activity/w/sun0day/modern-api" >
-<img src="https://img.shields.io/github/search/sun0day/modern-api/goto?color=%23812461">
-<br>
-<br>
-Easy, tiny, modern web APIs lib based on <a href="https://developer.mozilla.org/en-US/docs/Web/API">Web API</a>.
+Easy, tiny, modern web APIs lib based on <a href="https://developer.mozilla.org/en-US/docs/Web/API">Web API</a>
 </p>
 
 
