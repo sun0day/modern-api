@@ -1,6 +1,6 @@
 {
   "name": "wodash.timer",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Timer APIs based on Promise, setTimeout, setInterval",
   "author": "sun0day",
   "license": "ISC",
@@ -19,7 +19,9 @@
     },
     "./*": "./*"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup --config ../../tsup.config.ts"
   }

@@ -1,6 +1,6 @@
 {
   "name": "wodash.battery",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "get battery info",
   "author": "sun0day",
   "license": "ISC",
@@ -18,7 +18,9 @@
     },
     "./*": "./*"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup --config ../../tsup.config.ts"
   }
