@@ -2,7 +2,7 @@
 
 <img src="https://img.shields.io/npm/v/modern-api.styledlog"> <img src="https://img.shields.io/npm/dw/modern-api.styledlog" > <img src="https://img.shields.io/bundlephobia/minzip/modern-api.styledlog?label=minzip">
 
-Log text in custom css style based on[Web Console API](https://developer.mozilla.org/en-US/docs/Web/API/Console_API).
+Log text in custom css style based on [Web Console API](https://developer.mozilla.org/en-US/docs/Web/API/Console_API).
 
 ## Install
 
