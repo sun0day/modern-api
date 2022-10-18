@@ -4,6 +4,7 @@
   "description": "log content in custom css style based on",
   "author": "sun0day",
   "license": "ISC",
+  "main": "./dist/index.cjs",
   "keywords": [
     "modern-api",
     "web api",

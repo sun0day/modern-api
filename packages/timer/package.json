@@ -4,6 +4,7 @@
   "description": "Timer APIs based on Promise, setTimeout, setInterval",
   "author": "sun0day",
   "license": "ISC",
+  "main": "./dist/index.cjs",
   "keywords": [
     "modern-api",
     "web api",

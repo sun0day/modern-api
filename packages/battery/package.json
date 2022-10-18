@@ -4,6 +4,7 @@
   "description": "get battery info",
   "author": "sun0day",
   "license": "ISC",
+  "main": "./dist/index.cjs",
   "keywords": [
     "modern-api",
     "web api",
