@@ -35,7 +35,7 @@ const commit = (version) => {
   exec('git branch | git push origin')
 }
 
-const tag = () => {
+const tag = (version) => {
   exec(`git tag v${version}`)
   exec(`git push origin v${version}`)
 }
