@@ -45,5 +45,5 @@ const tag = (version) => {
   exec('pnpm changelog')
   commit(nextVersion)
   tag(nextVersion)
-  exec('pnpm build:all')
+  // exec('pnpm build:all')
 })()
