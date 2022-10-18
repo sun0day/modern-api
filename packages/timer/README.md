@@ -1,13 +1,13 @@
-# wodash.timer
+# modern-api.timer
 
-<img src="https://img.shields.io/npm/v/wodash.timer"> <img src="https://img.shields.io/npm/dw/wodash.timer" > <img src="https://img.shields.io/bundlephobia/minzip/wodash.timer?label=minzip">
+<img src="https://img.shields.io/npm/v/modern-api.timer"> <img src="https://img.shields.io/npm/dw/modern-api.timer" > <img src="https://img.shields.io/bundlephobia/minzip/modern-api.timer?label=minzip">
 
 Timer APIs based on `Promise`, `setTimeout`, `setInterval`
 
 ## Install
 
 ```shell
-$ npm i wodash.timer
+$ npm i modern-api.timer
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ $ npm i wodash.timer
 ### sleep for n ms
 
 ```typescript
-import { sleep } from 'wodash.timer'
+import { sleep } from 'modern-api.timer'
 
 (async() => {
   const now = +new Date()
@@ -26,7 +26,7 @@ import { sleep } from 'wodash.timer'
 
 ### timeout over n ms
 ```typescript
-import { sleep, timeout } from 'wodash.timer'
+import { sleep, timeout } from 'modern-api.timer'
 
 (async() => {
   await timeout(sleep(1000), 2000) // no error
@@ -36,7 +36,7 @@ import { sleep, timeout } from 'wodash.timer'
 
 ### pasue and resume `setTimeout`
 ```typescript
-import { pauseTimeout } from 'wodash.timer'
+import { pauseTimeout } from 'modern-api.timer'
 
 (async () => {
   const timer = pauseTimeout(() => console.log('done'), 1000) // timer.isActive = true
@@ -54,7 +54,7 @@ import { pauseTimeout } from 'wodash.timer'
 
 ### stop `setTimeout` whenever you don't want to continue
 ```typescript
-import { pauseTimeout } from 'wodash.timer'
+import { pauseTimeout } from 'modern-api.timer'
 
 (async () => {
   const timer = pauseTimeout(() => console.log('done'), 1000) // timer.isActive = true
@@ -72,7 +72,7 @@ import { pauseTimeout } from 'wodash.timer'
 
 ### pasue and resume `setInterval`
 ```typescript
-import { pauseInterval } from 'wodash.timer'
+import { pauseInterval } from 'modern-api.timer'
 
 (async () => {
   const timer = pauseInterval(() => console.log('tick'), 1000) // timer.isActive = true
@@ -91,7 +91,7 @@ import { pauseInterval } from 'wodash.timer'
 
 ### stop `setInterval` whenever you don't want to continue
 ```typescript
-import { pauseInterval } from 'wodash.timer'
+import { pauseInterval } from 'modern-api.timer'
 
 (async () => {
   const timer = pauseInterval(() => console.log('tick'), 1000) // timer.isActive = true

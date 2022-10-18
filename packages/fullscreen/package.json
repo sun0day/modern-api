@@ -1,11 +1,11 @@
 {
-  "name": "wodash.fullscreen",
+  "name": "modern-api.fullscreen",
   "version": "0.1.0",
   "description": "Fullscreen APIs",
   "author": "sun0day",
   "license": "ISC",
   "keywords": [
-    "wodash",
+    "modern-api",
     "web api",
     "utils",
     "fullscreen"

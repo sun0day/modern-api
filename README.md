@@ -6,11 +6,11 @@
 <br>
 <br>
 
-<img src="https://img.shields.io/npm/v/wodash">
-<img src="https://img.shields.io/npm/dw/wodash" >
-<img src="https://img.shields.io/bundlephobia/minzip/wodash?label=minzip">
-<img src="https://img.shields.io/github/commit-activity/w/sun0day/wodash" >
-<img src="https://img.shields.io/github/search/sun0day/wodash/goto?color=%23812461">
+<img src="https://img.shields.io/npm/v/modern-api">
+<img src="https://img.shields.io/npm/dw/modern-api" >
+<img src="https://img.shields.io/bundlephobia/minzip/modern-api?label=minzip">
+<img src="https://img.shields.io/github/commit-activity/w/sun0day/modern-api" >
+<img src="https://img.shields.io/github/search/sun0day/modern-api/goto?color=%23812461">
 <br>
 <br>
 Easy, tiny, modern web APIs lib based on <a href="https://developer.mozilla.org/en-US/docs/Web/API">Web API</a>.

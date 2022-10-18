@@ -1,13 +1,13 @@
-# wodash.fullscreen
+# modern-api.fullscreen
 
-<img src="https://img.shields.io/npm/v/wodash.fullscreen"> <img src="https://img.shields.io/npm/dw/wodash.fullscreen" > <img src="https://img.shields.io/bundlephobia/minzip/wodash.fullscreen?label=minzip">
+<img src="https://img.shields.io/npm/v/modern-api.fullscreen"> <img src="https://img.shields.io/npm/dw/modern-api.fullscreen" > <img src="https://img.shields.io/bundlephobia/minzip/modern-api.fullscreen?label=minzip">
 
 More compatibility fullscreen APIs based on [Web Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API).
 
 ## Install
 
 ```shell
-$ npm i wodash.fullscreen
+$ npm i modern-api.fullscreen
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ $ npm i wodash.fullscreen
 ### judge whether fullscreen APIs is supported
 
 ```typescript
-import { fullscreenEnabled } from 'wodash.fullscreen'
+import { fullscreenEnabled } from 'modern-api.fullscreen'
 
 fullscreenEnabled() // true or false
 ```
@@ -23,7 +23,7 @@ fullscreenEnabled() // true or false
 ### request or exit fullscreen
 
 ```typescript
-import { fullscreenEnabled } from 'wodash.fullscreen'
+import { fullscreenEnabled } from 'modern-api.fullscreen'
 
 requestFullscreen(document.documentElement)
 
@@ -33,7 +33,7 @@ exitFullscreen()
 ### watch fullscreen 'change' or 'error' event
 
 ```typescript
-import { onFullscreen } from 'wodash.fullscreen'
+import { onFullscreen } from 'modern-api.fullscreen'
 
 onFullscreen({
   onScreen: e => console.log('enter fullscreen mode'),

@@ -1,13 +1,13 @@
-# wodash.styledlog
+# modern-api.styledlog
 
-<img src="https://img.shields.io/npm/v/wodash.styledlog"> <img src="https://img.shields.io/npm/dw/wodash.styledlog" > <img src="https://img.shields.io/bundlephobia/minzip/wodash.styledlog?label=minzip">
+<img src="https://img.shields.io/npm/v/modern-api.styledlog"> <img src="https://img.shields.io/npm/dw/modern-api.styledlog" > <img src="https://img.shields.io/bundlephobia/minzip/modern-api.styledlog?label=minzip">
 
 Log text in custom css style based on[Web Console API](https://developer.mozilla.org/en-US/docs/Web/API/Console_API).
 
 ## Install
 
 ```shell
-$ npm i wodash.styledlog
+$ npm i modern-api.styledlog
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ $ npm i wodash.styledlog
 ### log text in custom css style
 
 ```typescript
-import { log, styled } from 'wodash.styledlog'
+import { log, styled } from 'modern-api.styledlog'
 
 const styledText1 = styled({color: 'red', 'background': 'green'})
 const styledText2 = styled({color: 'green', 'background': 'red'})

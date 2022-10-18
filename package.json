@@ -1,17 +1,17 @@
 {
-  "name": "wodash",
+  "name": "modern-api",
   "version": "0.1.0",
   "description": "Easy, tiny, modern web APIs lib",
   "author": "sun0day",
   "license": "ISC",
   "keywords": [
-    "wodash",
+    "modern-api",
     "web api",
     "utils"
   ],
   "main": "index.js",
   "scripts": {
-    "build:all": "pnpm -r --filter=\"wodash.*\" run build",
+    "build:all": "pnpm -r --filter=\"modern-api.*\" run build",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "lint:fix": "eslint . --fix",
     "prepare": "husky install",

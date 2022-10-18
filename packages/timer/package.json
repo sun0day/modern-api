@@ -1,11 +1,11 @@
 {
-  "name": "wodash.timer",
+  "name": "modern-api.timer",
   "version": "0.1.0",
   "description": "Timer APIs based on Promise, setTimeout, setInterval",
   "author": "sun0day",
   "license": "ISC",
   "keywords": [
-    "wodash",
+    "modern-api",
     "web api",
     "utils",
     "timer",

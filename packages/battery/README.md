@@ -1,13 +1,13 @@
-# wodash.battery
+# modern-api.battery
 
-<img src="https://img.shields.io/npm/v/wodash.battery"> <img src="https://img.shields.io/npm/dw/wodash.battery" > <img src="https://img.shields.io/bundlephobia/minzip/wodash.battery?label=minzip">
+<img src="https://img.shields.io/npm/v/modern-api.battery"> <img src="https://img.shields.io/npm/dw/modern-api.battery" > <img src="https://img.shields.io/bundlephobia/minzip/modern-api.battery?label=minzip">
 
 Get and watch battery status via [Web Battery API](https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API).
 
 ## Install
 
 ```shell
-$ npm i wodash.battery
+$ npm i modern-api.battery
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ $ npm i wodash.battery
 ### get and watch battery status
 
 ```typescript
-import { batterySupported, getBattery } from 'wodash.battery'
+import { batterySupported, getBattery } from 'modern-api.battery'
 
 if(batterySupported) {
   const {battery, stop} = await getBattery({

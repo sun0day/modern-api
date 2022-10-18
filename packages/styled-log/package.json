@@ -1,11 +1,11 @@
 {
-  "name": "wodash.styledlog",
+  "name": "modern-api.styledlog",
   "version": "0.1.0",
   "description": "log content in custom css style based on",
   "author": "sun0day",
   "license": "ISC",
   "keywords": [
-    "wodash",
+    "modern-api",
     "web api",
     "utils",
     "console.log",
