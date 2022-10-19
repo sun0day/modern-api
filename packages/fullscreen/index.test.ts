@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck error in different browser
-import { exitFullscreen, fullscreenElement, fullscreenEnabled, onFullscreen, requestFullscreen } from './index'
+import { exitFullscreen, fullscreenElement, fullscreenSupported, onFullscreen, requestFullscreen } from './index'
 
 describe('fullscreen', () => {
   afterEach(() => {
@@ -12,6 +12,10 @@ describe('fullscreen', () => {
     document.mozFullScreenElement = null
     document.msFullscreenEnabled = false
     document.msFullscreenElement = null
+  })
+
+  it('should fullscreen disabled by default', () => {
+    expect(fullscreenSupported).toBeFalsy()
   })
 
   function testEnabled(browser: string) {
@@ -33,11 +37,6 @@ describe('fullscreen', () => {
         document[changeKey] && document[changeKey](event)
       })
     }
-
-    it(`should fullscreen enabled in ${browser}`, () => {
-      setBrowser()
-      expect(fullscreenEnabled()).toBeTruthy()
-    })
 
     it(`should request and exit fullscreen in ${browser}`, async () => {
       setBrowser()
@@ -72,7 +71,6 @@ describe('fullscreen', () => {
   function testDisabled() {
     it('should fullscreen disabled', () => {
       expect(fullscreenElement()).toBeNull()
-      expect(fullscreenEnabled()).toBeFalsy()
     })
 
     it('should request and exit fullscreen not work', async () => {

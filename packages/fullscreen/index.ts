@@ -20,9 +20,7 @@ const getPrefix = () => {
  *
  * @returns {boolean}
  */
-export const fullscreenEnabled = () => {
-  return typeof getPrefix() === 'string'
-}
+export const fullscreenSupported = typeof getPrefix() === 'string'
 
 /**
  * get current fullscreen element
@@ -88,10 +86,10 @@ export const exitFullscreen = () => {
 /**
  * listen fullscreen 'change' and 'error' event
  *
- * @param {{onScreen: (e: Event) => void, onExit: (e: Event) => void, onError: (e: Event) => void}} callbacks - callback map
- *  onScreen - trigger when enter fullscreen mode \
- *  onExit - trigger when quit fullscreen mode
- *  onError - trigger when fullscreen action fails
+ * @param {Object} callbacks - callback map
+ * @param {(e: Event) => void} callbacks.onScreen - trigger when enter fullscreen mode \
+ * @param {(e: Event) => void} callbacks.onExit - trigger when quit fullscreen mode
+ * @param {(e: Event) => void} callbacks.onError - trigger when fullscreen action fails
  * @returns {void}
  */
 export const onFullscreen = ({

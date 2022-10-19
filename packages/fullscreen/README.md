@@ -12,34 +12,30 @@ $ npm i modern-api.fullscreen
 
 ## Usage
 
-### judge whether fullscreen APIs is supported
-
-```typescript
-import { fullscreenEnabled } from 'modern-api.fullscreen'
-
-fullscreenEnabled() // true or false
-```
-
 ### request or exit fullscreen
 
 ```typescript
-import { fullscreenEnabled } from 'modern-api.fullscreen'
+import { fullscreenSupported, requestFullscreen, exitFullscreen } from 'modern-api.fullscreen'
 
-requestFullscreen(document.documentElement)
+if(fullscreenSupported) {
+  requestFullscreen(document.documentElement)
 
-exitFullscreen()
+  exitFullscreen()
+}
 ```
 
 ### watch fullscreen 'change' or 'error' event
 
 ```typescript
-import { onFullscreen } from 'modern-api.fullscreen'
+import { fullscreenSupported, onFullscreen } from 'modern-api.fullscreen'
 
-onFullscreen({
-  onScreen: e => console.log('enter fullscreen mode'),
-  onExit: e => console.log('exit fullscreen mode') ,
-  onError: e => console.log('fullscreen error'),
-})
+if(fullscreenSupported) {
+  onFullscreen({
+    onScreen: e => console.log('enter fullscreen mode'),
+    onExit: e => console.log('exit fullscreen mode') ,
+    onError: e => console.log('fullscreen error'),
+  })
+}
 ```
 
 ## API
@@ -50,7 +46,7 @@ onFullscreen({
  *
  * @returns {boolean}
  */
-declare const fullscreenEnabled: () => boolean;
+declare const fullscreenSupported: boolean;
 /**
  * get current fullscreen element
  *
@@ -73,10 +69,10 @@ declare const exitFullscreen: () => Promise<unknown>;
 /**
  * listen fullscreen 'change' and 'error' event
  *
- * @param {{onScreen: (e: Event) => void, onExit: (e: Event) => void, onError: (e: Event) => void}} callbacks - callback map
- *  onScreen - trigger when enter fullscreen mode \
- *  onExit - trigger when quit fullscreen mode
- *  onError - trigger when fullscreen action fails
+ * @param {Object} callbacks - callback map
+ * @param {(e: Event) => void} callbacks.onScreen - trigger when enter fullscreen mode \
+ * @param {(e: Event) => void} callbacks.onExit - trigger when quit fullscreen mode
+ * @param {(e: Event) => void} callbacks.onError - trigger when fullscreen action fails
  * @returns {void}
  */
 declare const onFullscreen: ({ onScreen, onExit, onError, }: {
