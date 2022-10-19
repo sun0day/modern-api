@@ -16,10 +16,12 @@ export const batterySupported = 'getBattery' in navigator
  * get BatteryManager instance
  * @see https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager
  *
+ * @typedef {Object} BatteryResult
+ * @property {BatteryManager | null}  BatteryResult.battery - will be null if not support
+ * @property {(event: BatteryEvent) => void,} BatteryResult.stop - stop battery event listener
+ *
  * @param {Record<BatteryEvent, () => void} listeners- battery event listener
  * @returns {Promise<BatteryResult>}
- * - BatteryResult.battery: BatteryManager | null, // will be null if not support
- * - BatteryResult.stop: (event: BatteryEvent) => void, // stop battery event listener
  */
 export const getBattery = async (listeners?: Record<BatteryEvent, () => void>): Promise<{
   battery: BatteryManager | null
