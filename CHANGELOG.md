@@ -1,3 +1,19 @@
+# [0.2.0-beta.0](https://github.com/sun0day/modern-api/compare/v0.1.1...v0.2.0-beta.0) (2022-10-19)
+
+
+### Bug Fixes
+
+* **battery:** type comment ([9a70a0f](https://github.com/sun0day/modern-api/commit/9a70a0f5ad1ca882db497dcc207a9aa08df45972))
+* **fullscreen:** type comment & fullscreenEnabled => fullsreenSupported ([7be39bf](https://github.com/sun0day/modern-api/commit/7be39bfc332ca91d708ccc22dcfa0cd2dc2c4fcb))
+* **timer:** type comment ([f5bdab7](https://github.com/sun0day/modern-api/commit/f5bdab7b4a239b8cf6649ea78d3648d212dd56fe))
+
+
+### Features
+
+* **storage:** add `storage.getItem` `storage.setItem` `storage.getJson` `storage.setJson` `storage.removeItem` `storage.hasItem` `storage.staleItem` `storage.clear` ([1e9775d](https://github.com/sun0day/modern-api/commit/1e9775de3b368d2322a12c083ad0afa2f8e3b360))
+
+
+
 ## [0.1.1](https://github.com/sun0day/wodash/compare/v0.0.0...v0.1.1) (2022-10-18)
 
 

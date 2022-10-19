@@ -1,6 +1,6 @@
 {
   "name": "modern-api.timer",
-  "version": "0.1.1",
+  "version": "0.2.0-beta.0",
   "description": "Timer APIs based on Promise, setTimeout, setInterval",
   "author": "sun0day",
   "license": "ISC",
