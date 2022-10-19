@@ -28,13 +28,15 @@ export const timeout = <T>(value: PromiseLike<T>, delay: number, error?: Error) 
 /**
  * pausable `setTimeout`
  *
+ * @typedef {Object} Timer
+ * @property {boolean} isActive - whether `setTimeout` is timing
+ * @property {() => void} pause - `setTimeout` stop timing temporarily
+ * @property {() => void} resume - `setTimeout` continue timing
+ * @property {() => void} stop - `setTimeout` stop timing permanently
+ *
  * @param {() => any} callback - `setTimeout` callback
  * @param {number} delay - `setTimeout` delay, ms
- * @returns {{ isActive: boolean, pause: () => void, resume: () => void, stop: () => void }}
- *  isActive - whether `setTimeout` is timing \
- *  pause - `setTimeout` stop timing temporarily \
- *  resume - `setTimeout` continue timing \
- *  stop - `setTimeout` stop timing permanently \
+ * @returns {Timer}
  */
 export const pauseTimeout = (callback: () => any, delay: number) => {
   let timeId = null; let isStop = false; let now = +new Date(); let remainTime = delay
@@ -78,13 +80,15 @@ export const pauseTimeout = (callback: () => any, delay: number) => {
  * - make sure no callback invoke missed \
  * - make sure callback invoke frequency as stable as possible
  *
+ * @typedef {Object} Timer
+ * @property {boolean} isActive - whether `setInterval` is polling
+ * @property {() => void} pause - `setInterval` stop polling temporarily
+ * @property {() => void} resume - `setInterval` continue polling
+ * @property {() => void} stop - `setInterval` stop polling permanently
+ *
  * @param {() => any} callback - `setInterval` callback
  * @param {number} delay - `setInterval` delay, ms
- * @returns {{ isActive: boolean, pause: () => void, resume: () => void, stop: () => void }}
- *  isActive - whether `setInterval` is polling \
- *  pause - `setInterval` stop polling temporarily \
- *  resume - `setInterval` continue polling \
- *  stop - `setInterval` stop polling permanently \
+ * @returns {Timer}
  */
 export const pauseInterval = (callback: () => any, delay: number) => {
   let timeId = null
