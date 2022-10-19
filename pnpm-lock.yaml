@@ -36,6 +36,24 @@ importers:
       typescript: 4.8.4
       vitest: 0.24.1_jsdom@20.0.1
 
+  packages/battery:
+    specifiers: {}
+
+  packages/fullscreen:
+    specifiers: {}
+
+  packages/storage:
+    specifiers:
+      modern-api.timer: workspace:*
+    devDependencies:
+      modern-api.timer: link:../timer
+
+  packages/styled-log:
+    specifiers: {}
+
+  packages/timer:
+    specifiers: {}
+
 packages:
 
   /@antfu/eslint-config-basic/0.27.0_25sstg4uu2sk4pm7xcyzuov7xq:

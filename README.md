@@ -32,3 +32,9 @@ Easy, tiny, modern web APIs lib based on <a href="https://developer.mozilla.org/
 > **[Battery](/packages/battery)**: Get and watch battery status via [Web Battery API](https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API).
 
 `batterySupported` `getBattery`
+
+<br>
+
+> **[Storage](/packages/storage)**: Client storage APIs based on [Web localStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
+
+`storage.getItem` `storage.setItem` `storage.getJson` `storage.setJson` `storage.removeItem` `storage.hasItem` `storage.staleItem` `storage.clear`
