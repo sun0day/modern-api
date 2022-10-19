@@ -5,6 +5,14 @@
   "author": "sun0day",
   "license": "ISC",
   "main": "./dist/index.cjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sun0day/modern-api.git",
+    "directory": "packages/styled-log"
+  },
+  "bugs": {
+    "url": "https://github.com/sun0day/modern-api/issues"
+  },
   "keywords": [
     "modern-api",
     "web api",
