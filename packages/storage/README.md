@@ -117,7 +117,7 @@ declare class StorageEnhancer {
      * @param {boolean} options.updateAge - whether delay key ttl
      * @returns {string | null}
      */
-    getItem(key: string, { removeStale, updateAge }?: GetOptions): string;
+    getItem(key: string, { removeStale, updateAge }?: GetOptions): string | null;
     /**
      * set item via key
      *
@@ -156,10 +156,18 @@ declare class StorageEnhancer {
      */
     removeItem(key: string): void;
     /**
-    * clear all keys and items
-    *
-    * @returns {void}
-    */
+     * clear all keys and items
+     *
+     * @returns {void}
+     */
     clear(): void;
+    _prependExpire(value: string, ttl?: number | string | null): string;
+    _parseValue(value: string): {
+        value: string;
+        start: string | null;
+        ttl: string | null;
+    };
+    _isStale(start?: number | string | null, ttl?: number | string | null): boolean;
+    _isNumber(n: any): boolean;
 }
 ```

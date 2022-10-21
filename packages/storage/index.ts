@@ -34,7 +34,7 @@ export class StorageEnhancer {
     if (!this.hasItem(key))
       return false
 
-    const { start, ttl } = this._parseValue(this.storage.getItem(key))
+    const { start, ttl } = this._parseValue(this.storage.getItem(key)!)
 
     return this._isStale(start, ttl)
   }
@@ -52,7 +52,7 @@ export class StorageEnhancer {
     if (!this.hasItem(key))
       return null
 
-    const { value, start, ttl } = this._parseValue(this.storage.getItem(key))
+    const { value, start, ttl } = this._parseValue(this.storage.getItem(key)!)
 
     if (this._isStale(start, ttl)) {
       removeStale && this.removeItem(key)
@@ -60,6 +60,7 @@ export class StorageEnhancer {
     }
 
     if (updateAge)
+      // @ts-expect-error ok when ttl is null or string
       this.setItem(key, value, { ttl })
 
     return value
@@ -89,6 +90,7 @@ export class StorageEnhancer {
    */
   getJson(key: string, options: GetOptions = {}) {
     try {
+      // @ts-expect-error ok when JSON.parse(null)
       return JSON.parse(this.getItem(key, options))
     }
     catch {
@@ -128,7 +130,7 @@ export class StorageEnhancer {
     this.storage.clear()
   }
 
-  _prependExpire(value: string, ttl?: number | string) {
+  _prependExpire(value: string, ttl?: number | string | null) {
     return this._isNumber(ttl) ? `start:${+new Date()}:ttl:${ttl}:${value}` : value
   }
 
@@ -143,7 +145,7 @@ export class StorageEnhancer {
     }
   }
 
-  _isStale(start?: number | string, ttl?: number | string) {
+  _isStale(start?: number | string | null, ttl?: number | string | null) {
     return this._isNumber(start) && this._isNumber(ttl) && Number(start) + Number(ttl) < +new Date()
   }
 

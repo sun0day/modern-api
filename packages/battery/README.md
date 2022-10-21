@@ -52,7 +52,7 @@ declare const batterySupported: boolean;
  *
  * @typedef {Object} BatteryResult
  * @property {BatteryManager | null}  BatteryResult.battery - will be null if not support
- * @property {(event: BatteryEvent) => void,} BatteryResult.stop - stop battery event listener
+ * @property {(event: BatteryEvent) => void} BatteryResult.stop - stop battery event listener
  *
  * @param {Record<BatteryEvent, () => void} listeners- battery event listener
  * @returns {Promise<BatteryResult>}

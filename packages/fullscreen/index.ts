@@ -17,8 +17,6 @@ const getPrefix = () => {
 
 /**
  * whether fullscreen APIs is enabled
- *
- * @returns {boolean}
  */
 export const fullscreenSupported = typeof getPrefix() === 'string'
 
@@ -41,6 +39,7 @@ export const fullscreenElement = (): Element | null => {
     return document.mozFullScreenElement
   }
 
+  // @ts-expect-error fullscreen element in different browser
   return document[`${prefix}FullscreenElement`]
 }
 
@@ -60,6 +59,7 @@ export const requestFullscreen = (el: Element) => {
     if (prefix === '')
       return el.requestFullscreen().then(resolve)
 
+    // @ts-expect-error requestFullscreen in different browser
     return el[`${prefix}RequestFullscreen`]().then(resolve)
   })
 }
@@ -79,6 +79,7 @@ export const exitFullscreen = () => {
     if (prefix === '')
       return document.exitFullscreen().then(resolve)
 
+    // @ts-expect-error exitFullscreen in different browser
     return document[`${prefix}ExitFullscreen`]().then(resolve)
   })
 }
@@ -96,17 +97,19 @@ export const onFullscreen = ({
   onScreen,
   onExit,
   onError,
-}: { onScreen?: (e: Event) => void; onExit?: (e: Event) => void; onError?: (e) => void }) => {
+}: { onScreen?: (e: Event) => void; onExit?: (e: Event) => void; onError?: (e: Event) => void }) => {
   const prefix = getPrefix()
   if (prefix === undefined)
     return
 
   if (onScreen || onExit) {
+    // @ts-expect-error fullscreenchange in different browser
     document[`on${prefix}fullscreenchange`] = (e: Event) => {
       fullscreenElement() ? onScreen && onScreen(e) : onExit && onExit(e)
     }
   }
 
   if (onError)
+    // @ts-expect-error fullscreenerror in different browser
     document[`on${prefix}fullscreenerror`] = onError
 }

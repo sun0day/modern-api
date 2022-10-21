@@ -43,8 +43,6 @@ if(fullscreenSupported) {
 ```typescript
 /**
  * whether fullscreen APIs is enabled
- *
- * @returns {boolean}
  */
 declare const fullscreenSupported: boolean;
 /**
@@ -76,8 +74,8 @@ declare const exitFullscreen: () => Promise<unknown>;
  * @returns {void}
  */
 declare const onFullscreen: ({ onScreen, onExit, onError, }: {
-    onScreen?: (e: Event) => void;
-    onExit?: (e: Event) => void;
-    onError?: (e: any) => void;
+    onScreen?: ((e: Event) => void) | undefined;
+    onExit?: ((e: Event) => void) | undefined;
+    onError?: ((e: Event) => void) | undefined;
 }) => void;
 ```

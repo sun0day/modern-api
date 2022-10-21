@@ -39,7 +39,10 @@ export const timeout = <T>(value: PromiseLike<T>, delay: number, error?: Error) 
  * @returns {Timer}
  */
 export const pauseTimeout = (callback: () => any, delay: number) => {
-  let timeId = null; let isStop = false; let now = +new Date(); let remainTime = delay
+  let timeId: number | undefined
+  let isStop = false
+  let now = +new Date()
+  let remainTime = delay
   const getRemainTime = () => now + remainTime - +new Date()
   const timer = {
     isActive: true,
@@ -52,6 +55,7 @@ export const pauseTimeout = (callback: () => any, delay: number) => {
       if (!isStop && remainTime > -1) {
         now = +new Date()
         timer.isActive = true
+        // @ts-expect-error ok not match NodeJS.Timeout
         timeId = setTimeout(() => {
           timer.isActive = false
           callback()
@@ -65,6 +69,7 @@ export const pauseTimeout = (callback: () => any, delay: number) => {
     },
   }
 
+  // @ts-expect-error ok not match NodeJS.Timeout
   timeId = setTimeout(() => {
     timer.isActive = false
     callback()
@@ -91,7 +96,7 @@ export const pauseTimeout = (callback: () => any, delay: number) => {
  * @returns {Timer}
  */
 export const pauseInterval = (callback: () => any, delay: number) => {
-  let timeId = null
+  let timeId: number | undefined
   let isStop = false
 
   const timer = {
@@ -114,6 +119,7 @@ export const pauseInterval = (callback: () => any, delay: number) => {
   }
 
   function safeInterval() {
+    // @ts-expect-error ok not match NodeJS.Timeout
     timeId = setTimeout(() => {
       callback()
       timer.isActive && safeInterval()

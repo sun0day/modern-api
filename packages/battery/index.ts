@@ -18,7 +18,7 @@ export const batterySupported = 'getBattery' in navigator
  *
  * @typedef {Object} BatteryResult
  * @property {BatteryManager | null}  BatteryResult.battery - will be null if not support
- * @property {(event: BatteryEvent) => void,} BatteryResult.stop - stop battery event listener
+ * @property {(event: BatteryEvent) => void} BatteryResult.stop - stop battery event listener
  *
  * @param {Record<BatteryEvent, () => void} listeners- battery event listener
  * @returns {Promise<BatteryResult>}
@@ -32,7 +32,7 @@ export const getBattery = async (listeners?: Record<BatteryEvent, () => void>): 
 
   if (battery && listeners) {
     for (const event in listeners)
-      battery.addEventListener(event, listeners[event])
+      battery.addEventListener(event, listeners[event as BatteryEvent])
   }
 
   return {
