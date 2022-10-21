@@ -1,3 +1,12 @@
+# [0.2.0-beta.1](https://github.com/sun0day/modern-api/compare/v0.2.0-beta.0...v0.2.0-beta.1) (2022-10-21)
+
+
+### Bug Fixes
+
+* strict type ([335f4a4](https://github.com/sun0day/modern-api/commit/335f4a4c0519848d8c295bab394efd7cff1b5b10))
+
+
+
 # [0.2.0-beta.0](https://github.com/sun0day/modern-api/compare/v0.1.1...v0.2.0-beta.0) (2022-10-19)
 
 
