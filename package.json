@@ -12,12 +12,13 @@
   "main": "index.js",
   "scripts": {
     "build:all": "pnpm -r --filter=\"modern-api.*\" run build",
+    "build:test": "node scripts/testBuild.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "lint:fix": "eslint . --fix",
     "prepare": "husky install",
     "prepublishOnly": "pnpm build:all",
-    "test": "vitest",
-    "test:cov": "vitest run --coverage"
+    "test": "pnpm build:test && vitest",
+    "test:cov": "pnpm build:test && vitest run --coverage"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.27.0",

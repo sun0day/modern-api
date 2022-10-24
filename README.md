@@ -38,3 +38,9 @@ Easy, tiny, modern web APIs lib based on <a href="https://developer.mozilla.org/
 > **[Storage](/packages/storage)**: Client storage APIs based on [Web localStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 
 `storage.getItem` `storage.setItem` `storage.getJson` `storage.setJson` `storage.removeItem` `storage.hasItem` `storage.staleItem` `storage.clear`
+
+<br>
+
+> **[Clipboard](/packages/clipboard)**: Clipboard APIs based on [Web Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API).
+
+`clipboardSupported` `readSupported` `readTextSupported` `writeSupported` `writeTextSupported` `read` `write`
