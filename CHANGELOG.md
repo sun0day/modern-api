@@ -1,3 +1,17 @@
+# [0.2.0-beta.2](https://github.com/sun0day/modern-api/compare/v0.2.0-beta.1...v0.2.0-beta.2) (2022-10-24)
+
+
+### Bug Fixes
+
+* prepublishOnly on every package ([8cd5585](https://github.com/sun0day/modern-api/commit/8cd5585ef65abfbb3212c71af940f751d9ec4492))
+
+
+### Features
+
+* **clipboard:** add `read` `write` ([9814643](https://github.com/sun0day/modern-api/commit/98146438fe143f679ed5cca86e5b5b3b0e33fcc1))
+
+
+
 # [0.2.0-beta.1](https://github.com/sun0day/modern-api/compare/v0.2.0-beta.0...v0.2.0-beta.1) (2022-10-21)
 
 
